@@ -12,3 +12,10 @@ snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
   - "dbt_packages"
+
+models:
+  nyc_taxi:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
