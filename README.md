@@ -9,16 +9,17 @@ on and diff your local copy against this one.
 
 ## Tags (one per chapter checkpoint)
 
-| Tag                   | Chapter                                  | What you should have at this point                                  |
-| --------------------- | ---------------------------------------- | ------------------------------------------------------------------- |
-| `v1-ch2-setup`        | Ch 2 — dbt Setup for Azure PostgreSQL    | `dbt_project.yml`, `profiles.yml.example`, `_sources.yml`, plain `stg_trips.sql` |
-| `v2-ch3-jinja`        | Ch 3 — SQL and Jinja Templating          | `stg_trips.sql` extended with `payment_type_label`, `tip_pct`, `fare_per_mile` |
-| `v3-ch4-marts`        | Ch 4 — Materializations & Layers         | `stg_zones.sql`, `fct_trips.sql`, materialization config in `dbt_project.yml` |
-| `v4-ch5-tests`        | Ch 5 — dbt Tests                         | All schema YAML, singular test, unit test, `packages.yml`           |
+| Tag                     | Chapter                                  | What you should have at this point                                  |
+| ----------------------- | ---------------------------------------- | ------------------------------------------------------------------- |
+| `ch2-dbt-setup-azure`   | Ch 2 — dbt Setup for Azure PostgreSQL    | `dbt_project.yml`, `profiles.yml.example`, `_sources.yml`, plain `stg_trips.sql` |
+| `ch3-sql-jinja`         | Ch 3 — SQL and Jinja Templating          | `stg_trips.sql` extended with `payment_type_label`, `tip_pct`, `fare_per_mile` |
+| `ch4-materializations`  | Ch 4 — Materializations & Layers         | `stg_zones.sql`, `fct_trips.sql`, materialization config in `dbt_project.yml` |
+| `ch5-dbt-tests`         | Ch 5 — dbt Tests                         | All schema YAML, singular test, unit test, `packages.yml`           |
+| `ch6-docs-extras`       | Ch 6 — Docs & Extras                     | Fleshed-out `_fct_trips.yml` descriptions, doc block, `mutable_zones` seed + snapshot |
 
 ```bash
-git checkout v3-ch4-marts   # rewind to end of Chapter 4
-git checkout main           # latest (= end of Chapter 5)
+git checkout ch4-materializations   # rewind to end of Chapter 4
+git checkout main                   # latest (= end of Chapter 6)
 ```
 
 ## Setup
