@@ -1,20 +1,14 @@
-# nyc_taxi — Chapter 2 starter (skeleton)
+# nyc_taxi — Chapter 3 start (Chapter 2 done)
 
-> **You are on `ch2-dbt-setup-azure-postgres`.** This is the Chapter 2 starting skeleton: project config and empty `models/` and `macros/` folders. There are no models yet: building them is the point of the week.
+> **You are on `ch3-sql-jinja-templating`.** Chapter 2 is finished: `_sources.yml` and a basic `stg_trips` are already here. This is the clean starting point for Chapter 3.
 
-## Your task: Chapter 2 — dbt Setup for Azure PostgreSQL
+## Your task: Chapter 3 — SQL and Jinja Templating
 
-1. Set up your connection (once):
-   ```bash
-   cp profiles.yml.example profiles.yml     # then edit `user` and `schema`
-   export PG_PASSWORD='your-personal-password-from-week-9'
-   dbt debug --profiles-dir .               # or: just debug
-   ```
-   Use the **personal Postgres login your teacher gave you in Week 9**, not a shared admin account. `profiles.yml` is gitignored.
-2. Declare the Week 9 raw tables as sources in `models/staging/_sources.yml` (`raw_trips`, `raw_zones`, schema `nyc_taxi`).
-3. Write your first staging model, `models/staging/stg_trips.sql`, and run it: `dbt run --select stg_trips`.
+1. Add a reusable `macros/safe_divide.sql` macro.
+2. Extend `stg_trips` with derived columns using Jinja: `tip_pct`, `fare_per_mile`, and a `payment_type_label` built from a `{% for %}` loop over the TLC payment codes.
+3. Check your work: `dbt compile --select stg_trips` (inspect `target/compiled/...`), then `dbt run --select stg_trips`.
 
-When you finish, switch to the next branch to keep going (it already has Chapter 2 done as its starting point).
+When you finish, switch to the next branch to continue with Chapter 4.
 
 ## The chapter chain
 
