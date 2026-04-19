@@ -1,14 +1,15 @@
-# nyc_taxi — Chapter 3 start (Chapter 2 done)
+# nyc_taxi — Chapter 4 start (Chapter 3 done)
 
-> **You are on `ch3-sql-jinja-templating`.** Chapter 2 is finished: `_sources.yml` and a basic `stg_trips` are already here. This is the clean starting point for Chapter 3.
+> **You are on `ch4-materializations`.** Chapter 3 is finished: `stg_trips` already exposes the Jinja-derived columns. This is the clean starting point for Chapter 4.
 
-## Your task: Chapter 3 — SQL and Jinja Templating
+## Your task: Chapter 4 — Materializations and Layers
 
-1. Add a reusable `macros/safe_divide.sql` macro.
-2. Extend `stg_trips` with derived columns using Jinja: `tip_pct`, `fare_per_mile`, and a `payment_type_label` built from a `{% for %}` loop over the TLC payment codes.
-3. Check your work: `dbt compile --select stg_trips` (inspect `target/compiled/...`), then `dbt run --select stg_trips`.
+1. Add `models/staging/stg_zones.sql` (one row per TLC zone).
+2. Build the `models/marts/fct_trips.sql` mart: join `stg_trips` to `stg_zones` on pickup and dropoff location IDs.
+3. Set materializations: staging as `view`, marts as `table` (in `dbt_project.yml` or per-model config).
+4. Build the lineage: `dbt run --select +fct_trips`.
 
-When you finish, switch to the next branch to continue with Chapter 4.
+When you finish, switch to the next branch to continue with Chapter 5.
 
 ## The chapter chain
 
