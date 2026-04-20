@@ -1,15 +1,15 @@
-# nyc_taxi — Chapter 4 start (Chapter 3 done)
+# nyc_taxi — Chapter 5 start (Chapter 4 done)
 
-> **You are on `ch4-materializations`.** Chapter 3 is finished: `stg_trips` already exposes the Jinja-derived columns. This is the clean starting point for Chapter 4.
+> **You are on `ch5-dbt-testing`.** Chapter 4 is finished: the `fct_trips` mart is built from `stg_trips` and `stg_zones`. This is the clean starting point for Chapter 5.
 
-## Your task: Chapter 4 — Materializations and Layers
+## Your task: Chapter 5 — dbt Tests
 
-1. Add `models/staging/stg_zones.sql` (one row per TLC zone).
-2. Build the `models/marts/fct_trips.sql` mart: join `stg_trips` to `stg_zones` on pickup and dropoff location IDs.
-3. Set materializations: staging as `view`, marts as `table` (in `dbt_project.yml` or per-model config).
-4. Build the lineage: `dbt run --select +fct_trips`.
+1. Add `packages.yml` with `dbt_utils`, then `dbt deps`.
+2. Add generic tests in schema YAML: `not_null`, `unique`, `accepted_values`, and a `relationships` test between models.
+3. Add a singular test in `tests/` and a unit test.
+4. Run everything: `dbt build --select +fct_trips`. Some tests warn on real source-data gaps: that is expected, and you triage them.
 
-When you finish, switch to the next branch to continue with Chapter 5.
+When you finish, switch to the next branch to continue with Chapter 6.
 
 ## The chapter chain
 
