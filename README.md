@@ -1,15 +1,14 @@
-# nyc_taxi — Chapter 5 start (Chapter 4 done)
+# nyc_taxi — Chapter 6 start (Chapter 5 done)
 
-> **You are on `ch5-dbt-testing`.** Chapter 4 is finished: the `fct_trips` mart is built from `stg_trips` and `stg_zones`. This is the clean starting point for Chapter 5.
+> **You are on `ch6-docs-and-extras`.** Chapter 5 is finished: the models carry tests and `packages.yml` is in place. This is the clean starting point for Chapter 6.
 
-## Your task: Chapter 5 — dbt Tests
+## Your task: Chapter 6 — Docs and Extras
 
-1. Add `packages.yml` with `dbt_utils`, then `dbt deps`.
-2. Add generic tests in schema YAML: `not_null`, `unique`, `accepted_values`, and a `relationships` test between models.
-3. Add a singular test in `tests/` and a unit test.
-4. Run everything: `dbt build --select +fct_trips`. Some tests warn on real source-data gaps: that is expected, and you triage them.
+1. Add `description:` fields to models and columns in your schema YAML files.
+2. Generate and browse the docs site: `dbt docs generate` then `dbt docs serve`, and explore the lineage graph.
+3. Explore the package ecosystem (`packages.yml` + `dbt deps`).
 
-When you finish, switch to the next branch to continue with Chapter 6.
+When you finish, switch to the next branch for the practice exercises.
 
 ## The chapter chain
 

@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: fct_trips
+    description: One row per trip with zone attributes folded in (OBT mart).
+    columns:
+      - name: pickup_datetime
+        tests: [not_null]
