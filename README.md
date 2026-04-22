@@ -1,14 +1,12 @@
-# nyc_taxi — Chapter 6 start (Chapter 5 done)
+# nyc_taxi — Chapter 7 start (Chapter 6 done)
 
-> **You are on `ch6-docs-and-extras`.** Chapter 5 is finished: the models carry tests and `packages.yml` is in place. This is the clean starting point for Chapter 6.
+> **You are on `ch7-practice`.** Chapter 6 is finished: descriptions and docs are in place. This is the clean starting point for the Week 10 practice exercises.
 
-## Your task: Chapter 6 — Docs and Extras
+## Your task: Chapter 7 — Practice
 
-1. Add `description:` fields to models and columns in your schema YAML files.
-2. Generate and browse the docs site: `dbt docs generate` then `dbt docs serve`, and explore the lineage graph.
-3. Explore the package ecosystem (`packages.yml` + `dbt deps`).
+Work the practice exercises against this project: writing macros, adding a singular test, propagating a column change from staging through the mart, and attaching the four generic tests. Each exercise names the `dbt` command to verify it.
 
-When you finish, switch to the next branch for the practice exercises.
+When you finish, switch to the `solution` branch to compare against the complete build.
 
 ## The chapter chain
 
