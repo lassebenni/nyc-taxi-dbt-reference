@@ -3,11 +3,11 @@ nyc_taxi:
   outputs:
     dev:
       type: postgres
-      host: hyf-data-pg.postgres.database.azure.com
+      host: "{{ env_var('PG_HOST', 'hyf-data-pg.postgres.database.azure.com') }}"
       port: 5432
-      user: hyfadmin
+      user: "{{ env_var('PG_USER', 'hyfadmin') }}"
       password: "{{ env_var('PG_PASSWORD') }}"
-      dbname: team1
-      schema: dev_<your_name>     # ⚠️ Replace with your own first name, lowercase
+      dbname: "{{ env_var('PG_DBNAME', 'team1') }}"
+      schema: "{{ env_var('PG_SCHEMA', 'dev_<your_name>') }}"   # ⚠️ Local dev: replace <your_name> with your first name, lowercase. Airflow: pass PG_SCHEMA via BashOperator env (see README § Running from Airflow).
       sslmode: require
       threads: 4
