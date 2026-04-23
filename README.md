@@ -1,12 +1,12 @@
-# nyc_taxi — Chapter 7 start (Chapter 6 done)
+# nyc_taxi — Full finished project
 
-> **You are on `ch7-practice`.** Chapter 6 is finished: descriptions and docs are in place. This is the clean starting point for the Week 10 practice exercises.
+> **You are on `solution`.** This is the complete Week 10 project with every chapter implemented: staging models, the `fct_trips` mart, tests, docs, macros, and the practice work.
 
-## Your task: Chapter 7 — Practice
+## What this is for
 
-Work the practice exercises against this project: writing macros, adding a singular test, propagating a column change from staging through the mart, and attaching the four generic tests. Each exercise names the `dbt` command to verify it.
+Use this branch to see the finished shape of the project, or to compare your own work against a known-good build. It is identical to the [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) tag.
 
-When you finish, switch to the `solution` branch to compare against the complete build.
+To build it: set up `profiles.yml` (see the landing README on the `main` branch), then `dbt deps && dbt build --profiles-dir .`.
 
 ## The chapter chain
 

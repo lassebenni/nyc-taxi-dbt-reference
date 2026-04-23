@@ -6,6 +6,7 @@ select
     t.fare_amount,
     t.tip_amount,
     t.trip_distance,
+    t.trip_duration_minutes,
     t.tip_pct,
     t.fare_per_mile,
     t.payment_type_label,
