@@ -3,38 +3,60 @@
 Reference dbt project for **HYF Data Track Week 10**. Mirrors the `nyc_taxi` project that the
 chapters in `Data Track/Week 10/` walk you through building.
 
-This repo is a **safety net**, not a starter. The chapters expect you to type each file
-yourself. If you fall behind or something breaks, check out the tag for the chapter you are
-on and diff your local copy against this one.
+This repo has two roles:
 
-## Tags (one per chapter checkpoint)
+1. **A starter for the setup chapter.** Cloning the `ch2-start` branch gives you a ready-made
+   project skeleton so you can skip the `dbt init` boilerplate and get straight to configuring
+   your connection. Setup is not the skill you are here to learn.
+2. **A safety net for the modelling chapters.** From Chapter 3 on, you type each model yourself:
+   that typing is how the dbt mental model sticks. When you fall behind or something breaks,
+   switch to the matching `*-start` branch to continue, or check out a `chN-...` tag to diff your
+   work against the finished chapter.
 
-| Tag                     | Chapter                                  | What you should have at this point                                  |
-| ----------------------- | ---------------------------------------- | ------------------------------------------------------------------- |
-| `ch2-dbt-setup-azure`   | Ch 2 — dbt Setup for Azure PostgreSQL    | `dbt_project.yml`, `profiles.yml.example`, `_sources.yml`, plain `stg_trips.sql` |
-| `ch3-sql-jinja`         | Ch 3 — SQL and Jinja Templating          | `stg_trips.sql` extended with `payment_type_label`, `tip_pct`, `fare_per_mile` |
-| `ch4-materializations`  | Ch 4 — Materializations & Layers         | `stg_zones.sql`, `fct_trips.sql`, materialization config in `dbt_project.yml` |
-| `ch5-dbt-tests`         | Ch 5 — dbt Tests                         | All schema YAML, singular test, unit test, `packages.yml`           |
-| `ch6-docs-extras`       | Ch 6 — Docs & Extras                     | Fleshed-out `_fct_trips.yml` descriptions, doc block, `mutable_zones` seed + snapshot |
+## Start here: clone the skeleton
 
 ```bash
-git checkout ch4-materializations   # rewind to end of Chapter 4
-git checkout main                   # latest (= end of Chapter 6)
+git clone --branch ch2-start --single-branch https://github.com/lassebenni/nyc-taxi-dbt-reference.git nyc_taxi
+cd nyc_taxi
+rm -rf .git && git init          # start your own git history
+cp profiles.yml.example profiles.yml     # then edit `user` and `schema`
+export PG_PASSWORD='your-personal-password-from-week-9'   # macOS/Linux/WSL
+dbt debug --profiles-dir .               # or: just debug
 ```
 
-## Setup
+Use the **personal Postgres login your teacher gave you in Week 9** (your own username and
+password), not a shared admin account. `profiles.yml` is gitignored so it never lands in version
+control with a real password.
 
-Prereqs: dbt-core 1.11 with `dbt-postgres` (see [Ch 2](https://github.com/hackyourfuture/datatrack/blob/main/Data%20Track/Week%2010/week_10__2_dbt_setup_azure.md) for install).
+## Chapter checkpoints
+
+Every chapter has a **branch** you switch to and keep working from, and a **tag** for a clean,
+unchanged copy to compare against or roll back to.
+
+| Switch to continue a chapter | Diff against the finished chapter | What you should have at the end of that chapter |
+| --- | --- | --- |
+| `git switch ch2-start` (skeleton) | — | `dbt_project.yml`, `profiles.yml.example`, empty `models/` |
+| `git switch ch3-start` | `git checkout ch2-dbt-setup-azure` | `_sources.yml`, plain `stg_trips.sql` |
+| `git switch ch4-start` | `git checkout ch3-sql-jinja` | `stg_trips.sql` with `payment_type_label`, `tip_pct`, `fare_per_mile` |
+| `git switch ch5-start` | `git checkout ch4-materializations` | `stg_zones.sql`, `fct_trips.sql`, materialization config |
+| `git switch ch6-start` | `git checkout ch5-dbt-tests` | all schema YAML, singular test, unit test, `packages.yml` |
+| `git switch ch7-start` | `git checkout ch6-docs-extras` | fleshed-out descriptions, doc block, snapshot |
+
+Switch to a `*-start` **branch** to begin a chapter from a clean state and commit your own work
+onto it. Check out a `chN-...` **tag** only to look at the finished solution: tags land you in
+"detached HEAD", so create a branch (`git switch -c mywork <tag>`) before building on one.
+
+## Handy commands
 
 ```bash
-cp profiles.yml.example profiles.yml      # then edit `schema:` to dev_<your_name>
-export PG_PASSWORD='your-week-6-password'  # macOS/Linux/WSL
-just deps                                  # dbt deps  (only needed from v4 onward)
+cp profiles.yml.example profiles.yml      # then edit `user` and `schema`
+export PG_PASSWORD='your-personal-password-from-week-9'
+just deps                                  # dbt deps  (only needed once packages.yml exists, Ch5+)
 just build                                 # dbt build --select +fct_trips
 ```
 
-`profiles.yml` is gitignored — it stays local so the file never lands in version control with a real password.
-
 ## CI
 
-Every push runs `dbt build --select +fct_trips` against the shared Azure PostgreSQL instance. If the curriculum prose drifts away from runnable reality (test result counts change, columns get renamed, etc.) CI fails and the chapter gets fixed. See `.github/workflows/dbt-build.yml`.
+Every push to `main` runs `dbt build --select +fct_trips` against the shared Azure PostgreSQL
+instance. If the curriculum prose drifts away from runnable reality (test result counts change,
+columns get renamed, etc.) CI fails and the chapter gets fixed. See `.github/workflows/dbt-build.yml`.
