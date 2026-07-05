@@ -38,3 +38,15 @@ Each branch begins from the previous chapter's finished solution, so switching f
 - **Compare your work:** the `*-solution` **tags** are immutable snapshots of each finished chapter. `git checkout <tag>` lands you in "detached HEAD" (read-only), so create a branch (`git switch -c mywork <tag>`) if you want to build on one.
 
 You cannot push to this repo (it is read-only to you) and you do not need to: the chapter project is local learning, and the graded assignment lives in a separate template repo.
+
+## Practice exercises
+
+The Week 10 practice drills are **branches too**, each starting from the finished project (`ch7-practice`) so `dbt` actually runs. Do them in any order: `git switch` to a branch, read its `EXERCISE.md`, do the work, then `git diff` against the matching `-solution` branch.
+
+| Exercise | Start branch | Solution branch |
+| --- | --- | --- |
+| Macros and computed columns (`safe_divide`) | [`exercise-macros`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-macros) | [`exercise-macros-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-macros-solution) |
+| Write a singular test | [`exercise-singular-test`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-singular-test) | [`exercise-singular-test-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-singular-test-solution) |
+| Debug a broken `ref()` | [`exercise-debug-ref`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-debug-ref) | [`exercise-debug-ref-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-debug-ref-solution) |
+| Propagate a column change | [`exercise-column-propagation`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-column-propagation) | [`exercise-column-propagation-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-column-propagation-solution) |
+| Add the four generic tests | [`exercise-generic-tests`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-generic-tests) | [`exercise-generic-tests-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-generic-tests-solution) |
