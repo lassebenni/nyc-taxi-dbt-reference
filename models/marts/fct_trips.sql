@@ -9,6 +9,7 @@ select
     t.tip_pct,
     t.fare_per_mile,
     t.payment_type_label,
+    -- TODO: after adding trip_duration_minutes to stg_trips, propagate it here as well.
     pz.borough as pickup_borough,
     pz.zone as pickup_zone,
     dz.borough as dropoff_borough,

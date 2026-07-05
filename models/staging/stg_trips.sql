@@ -32,5 +32,8 @@ select
         {% endfor %}
         else 'Other'
     end as payment_type_label
+    -- TODO: add a trip_duration_minutes column. Put a comma after payment_type_label
+    -- above, then add this on a new line:
+    --   extract(epoch from (dropoff_datetime - pickup_datetime)) / 60 as trip_duration_minutes
 from {{ source('nyc_taxi', 'raw_trips') }}
 where pickup_location_id is not null
