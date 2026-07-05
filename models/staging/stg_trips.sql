@@ -34,3 +34,4 @@ select
     end as payment_type_label
 from {{ source('nyc_taxi', 'raw_trips') }}
 where pickup_location_id is not null
+  and fare_amount >= 0
