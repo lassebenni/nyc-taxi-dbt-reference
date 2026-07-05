@@ -13,7 +13,7 @@ select
     pz.zone as pickup_zone,
     dz.borough as dropoff_borough,
     dz.zone as dropoff_zone
-from {{ ref('stg_trips') }} t
+from {{ ref('stg_trps') }} t
 left join {{ ref('stg_zones') }} pz
     on t.pickup_location_id = pz.location_id
 left join {{ ref('stg_zones') }} dz
