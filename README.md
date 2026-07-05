@@ -23,13 +23,13 @@ Each branch begins from the previous chapter's finished solution, so switching f
 
 | Chapter | Work on this branch | Compare against this tag (finished chapter) |
 | --- | --- | --- |
-| Ch2 — dbt Setup for Azure PostgreSQL | `ch2-dbt-setup-azure-postgres` *(skeleton)* | `ch2-dbt-setup-azure-solution` |
-| Ch3 — SQL and Jinja Templating | `ch3-sql-jinja-templating` | `ch3-sql-jinja-solution` |
-| Ch4 — Materializations and Layers | `ch4-materializations` | `ch4-materializations-solution` |
-| Ch5 — dbt Tests | `ch5-dbt-testing` | `ch5-dbt-tests-solution` |
-| Ch6 — Docs and Extras | `ch6-docs-and-extras` | `ch6-docs-extras-solution` |
-| Ch7 — Practice | `ch7-practice` | `ch7-practice-solution` |
-| Full finished project | `solution` | `ch7-practice-solution` |
+| Ch2 — dbt Setup for Azure PostgreSQL | [`ch2-dbt-setup-azure-postgres`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch2-dbt-setup-azure-postgres) *(skeleton)* | [`ch2-dbt-setup-azure-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch2-dbt-setup-azure-solution) |
+| Ch3 — SQL and Jinja Templating | [`ch3-sql-jinja-templating`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch3-sql-jinja-templating) | [`ch3-sql-jinja-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch3-sql-jinja-solution) |
+| Ch4 — Materializations and Layers | [`ch4-materializations`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch4-materializations) | [`ch4-materializations-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch4-materializations-solution) |
+| Ch5 — dbt Tests | [`ch5-dbt-testing`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch5-dbt-testing) | [`ch5-dbt-tests-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch5-dbt-tests-solution) |
+| Ch6 — Docs and Extras | [`ch6-docs-and-extras`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch6-docs-and-extras) | [`ch6-docs-extras-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch6-docs-extras-solution) |
+| Ch7 — Practice | [`ch7-practice`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
+| Full finished project | [`solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/solution) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
 
 **How to use it:**
 
