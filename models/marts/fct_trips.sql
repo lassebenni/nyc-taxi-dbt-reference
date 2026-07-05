@@ -9,6 +9,7 @@ select
     t.tip_pct,
     t.fare_per_mile,
     t.payment_type_label,
+    t.trip_duration_minutes,
     pz.borough as pickup_borough,
     pz.zone as pickup_zone,
     dz.borough as dropoff_borough,
