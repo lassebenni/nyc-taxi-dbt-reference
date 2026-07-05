@@ -13,16 +13,21 @@ This repo has two roles:
    switch to the matching `*-start` branch to continue, or check out a `chN-...` tag to diff your
    work against the finished chapter.
 
-## Start here: clone the skeleton
+## Start here: clone and switch to the skeleton
 
 ```bash
-git clone --branch ch2-start --single-branch https://github.com/lassebenni/nyc-taxi-dbt-reference.git nyc_taxi
+git clone https://github.com/lassebenni/nyc-taxi-dbt-reference.git nyc_taxi
 cd nyc_taxi
-rm -rf .git && git init          # start your own git history
+git switch ch2-start                     # the starter skeleton
 cp profiles.yml.example profiles.yml     # then edit `user` and `schema`
 export PG_PASSWORD='your-personal-password-from-week-9'   # macOS/Linux/WSL
 dbt debug --profiles-dir .               # or: just debug
 ```
+
+Do a **plain clone** (not `--single-branch`) and **keep `.git`**: that is what lets you
+`git switch ch3-start`, `ch4-start`, ... later to catch up. Work on the `ch2-start` branch and
+commit as you go; you cannot push to this repo (it is read-only to you), and you do not need to:
+the chapter project is local learning, and the graded assignment is a separate template repo.
 
 Use the **personal Postgres login your teacher gave you in Week 9** (your own username and
 password), not a shared admin account. `profiles.yml` is gitignored so it never lands in version
