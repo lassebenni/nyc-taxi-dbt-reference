@@ -4,12 +4,6 @@ models:
   - name: stg_trips
     description: Cleaned green taxi trips, one row per trip.
     tests:
-      # Chapter 5 teaches this test at the default `error` severity to demonstrate
-      # how `dbt build` skips downstream models on a test failure. The January 2024
-      # raw_trips data contains 4 genuine duplicate rows (a TLC source-data issue),
-      # so the test always fails. In this reference repo we soften it to `warn` to
-      # keep CI green while still surfacing the count. When students follow the
-      # chapter on their own machine, they should leave it at the default.
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns: [pickup_datetime, dropoff_datetime, pickup_location_id, fare_amount]
           config:
@@ -17,24 +11,15 @@ models:
     columns:
       - name: pickup_datetime
         description: When the trip started.
-        tests:
-          - not_null
+        # TODO: this column should never be null. Add the right generic test.
       - name: pickup_location_id
         description: TLC zone ID where the trip started.
-        tests:
-          - not_null
-          - relationships:
-              to: ref('stg_zones')
-              field: location_id
-              config:
-                severity: warn
+        # TODO: (1) it should never be null, and (2) every value should exist as a
+        # location_id in stg_zones. Add both generic tests. The second one fails on
+        # real data (5 unmatched zones) -- decide on a severity.
       - name: payment_type
         description: TLC payment code (1-6).
-        tests:
-          - not_null:
-              severity: warn
-          - accepted_values:
-              values: [1, 2, 3, 4, 5, 6]
+        # TODO: values should be one of the six TLC codes. Add the right generic test.
 
 unit_tests:
   - name: payment_type_label_maps_known_codes

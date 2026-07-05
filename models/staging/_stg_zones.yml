@@ -6,8 +6,7 @@ models:
     columns:
       - name: location_id
         description: TLC zone ID.
-        tests:
-          - unique
-          - not_null
+        # TODO: this is the zone primary key and the target of the relationships test.
+        # It must be both unique and never null. Add both generic tests.
       - name: borough
         description: NYC borough (Manhattan, Brooklyn, Queens, Bronx, Staten Island, EWR, Unknown).
