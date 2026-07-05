@@ -25,7 +25,7 @@ jobs:
       - name: Render profiles.yml from template
         run: |
           mkdir -p ~/.dbt
-          sed "s/dev_<your_name>/dev_ci/" profiles.yml.example > ~/.dbt/profiles.yml
+          sed -e "s/dev_<your_name>/dev_ci/" -e "s/<your_username>/hyfadmin/" profiles.yml.example > ~/.dbt/profiles.yml
 
       - name: dbt deps
         run: |
