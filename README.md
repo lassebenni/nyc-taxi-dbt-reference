@@ -1,6 +1,6 @@
-# nyc_taxi — Full finished project
+# nyc_taxi — Going Further: snapshots
 
-> **You are on `solution`.** This is the complete Week 10 project with every chapter implemented: staging models, the `fct_trips` mart, tests, docs, macros, and the practice work.
+> **You are on `going-further`.** This is the finished `solution` project plus the optional **snapshot exercise** reference: the `mutable_zones` seed and the `mutable_zones_snapshot`. It backs the Week 10 Going Further section *Exercising snapshots safely*. Nothing here is required for the assignment; the teaching chain (`ch2`…`solution`) is deliberately snapshot-free.
 
 ## What this is for
 
