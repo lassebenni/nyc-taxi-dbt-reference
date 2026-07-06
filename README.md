@@ -50,3 +50,9 @@ The Week 10 practice drills are **branches too**, each starting from the finishe
 | Debug a broken `ref()` | [`exercise-debug-ref`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-debug-ref) | [`exercise-debug-ref-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-debug-ref-solution) |
 | Propagate a column change | [`exercise-column-propagation`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-column-propagation) | [`exercise-column-propagation-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-column-propagation-solution) |
 | Add the four generic tests | [`exercise-generic-tests`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-generic-tests) | [`exercise-generic-tests-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-generic-tests-solution) |
+
+## Going further (optional)
+
+The Week 10 **snapshot** exercise (SCD Type 2 row history) is optional and lives on its own branch so the teaching chain stays snapshot-free:
+
+- [`going-further`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/going-further): the finished project plus the `mutable_zones` seed and `mutable_zones_snapshot`, the reference for *Exercising snapshots safely* in the Week 10 Going Further page.
