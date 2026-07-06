@@ -1,6 +1,6 @@
-# nyc_taxi — Chapter 7 start (Chapter 6 done)
+# nyc_taxi — Practice exercise solution: Propagate a column change
 
-> **You are on `ch7-practice`.** Chapter 6 is finished: descriptions and docs are in place. This is the clean starting point for the Week 10 practice exercises.
+> **You are on `exercise-column-propagation-solution`.** This is the reference solution for the `exercise-column-propagation` drill. Compare your attempt with `git diff exercise-column-propagation exercise-column-propagation-solution`.
 
 ## Your task: Chapter 7 — Practice
 
