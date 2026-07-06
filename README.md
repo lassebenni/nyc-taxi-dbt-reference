@@ -1,6 +1,6 @@
-# nyc_taxi — Chapter 7 start (Chapter 6 done)
+# nyc_taxi — Practice exercise: Debug a broken ref()
 
-> **You are on `ch7-practice`.** Chapter 6 is finished: descriptions and docs are in place. This is the clean starting point for the Week 10 practice exercises.
+> **You are on `exercise-debug-ref`.** This is a Week 10 practice drill built on the finished project. Read [`EXERCISE.md`](EXERCISE.md) for the task, do the work, then compare with `git diff exercise-debug-ref exercise-debug-ref-solution`.
 
 ## Your task: Chapter 7 — Practice
 
