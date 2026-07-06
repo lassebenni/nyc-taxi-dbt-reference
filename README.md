@@ -1,6 +1,6 @@
-# nyc_taxi — Chapter 7 start (Chapter 6 done)
+# nyc_taxi — Practice exercise solution: Macros and computed columns (safe_divide)
 
-> **You are on `ch7-practice`.** Chapter 6 is finished: descriptions and docs are in place. This is the clean starting point for the Week 10 practice exercises.
+> **You are on `exercise-macros-solution`.** This is the reference solution for the `exercise-macros` drill. Compare your attempt with `git diff exercise-macros exercise-macros-solution`.
 
 ## Your task: Chapter 7 — Practice
 
