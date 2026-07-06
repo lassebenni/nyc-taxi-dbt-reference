@@ -6,16 +6,41 @@ The chapters are laid out as a **connected chain of branches**. Each branch is w
 
 ## Start here
 
+Install dbt once with `uv tool install --python 3.11 dbt-core --with dbt-postgres` (Chapter 2 has the full walkthrough), then:
+
 ```bash
 git clone https://github.com/lassebenni/nyc-taxi-dbt-reference.git nyc_taxi
 cd nyc_taxi
 git switch ch2-dbt-setup-azure-postgres   # the Ch2 starter skeleton
-cp profiles.yml.example profiles.yml      # then edit `user` and `schema`
-export PG_PASSWORD='your-personal-password-from-week-9'
-dbt debug --profiles-dir .                # or: just debug
+cp profiles.yml.example profiles.yml       # then edit `user` and `schema`
 ```
 
-Do a **plain clone** and **keep `.git`** (do not `rm -rf .git`): that is what lets you switch between chapter branches. Use the **personal Postgres login your teacher gave you in Week 9**, not a shared admin account. `profiles.yml` is gitignored.
+Now set your password and check the connection.
+
+**macOS / Linux / WSL (bash or zsh):**
+
+```bash
+export PG_PASSWORD='your-personal-password-from-week-9'
+dbt debug --profiles-dir .                 # or: just debug
+```
+
+**Windows (PowerShell):**
+
+```powershell
+$env:PG_PASSWORD = 'your-personal-password-from-week-9'
+dbt debug --profiles-dir .
+```
+
+Both should end with `All checks passed!`.
+
+> 💡 Tired of re-typing the password in every new terminal? Put `PG_PASSWORD=your-password` in a gitignored `.env` file, then load it before running dbt: `set -a && source .env && set +a` (bash/zsh). On PowerShell, keep using the `$env:PG_PASSWORD` line above.
+
+Two things that trip people up in setup:
+
+- **Do a plain clone and keep `.git`** (do not `rm -rf .git`): that is what lets you switch between chapter branches.
+- **Pin Python to 3.11.** dbt's dependencies do not support Python 3.13/3.14 yet, so install with `uv tool install --python 3.11 ...`. If `dbt --version` crashes on import with a `mashumaro` error, you picked up too new a Python: reinstall with the `--python 3.11` pin.
+
+Use the **personal Postgres login your teacher gave you in Week 9**, not a shared admin account. `profiles.yml` is gitignored.
 
 ## The chapter chain
 
