@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "innoverio.vscode-dbt-power-user"
+  ],
+  "unwantedRecommendations": [
+    "butchland.vscode-dbt-bigquery-power-user",
+    "bastienboutonnet.vscode-dbt"
+  ]
+}
