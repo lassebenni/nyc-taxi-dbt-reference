@@ -30,4 +30,4 @@ Use `from pyspark.sql import functions as F` for aggregations. Keep transformati
 
 ## Compare
 
-Check your notebook against the `ch13-pyspark-exploration-solution` branch.
+Check your notebook against the `week-13-pyspark-exploration-solution` branch.
