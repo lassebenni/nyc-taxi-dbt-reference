@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_trips
-    description: Cleaned green taxi trips, one row per trip.
+    description: Cleaned yellow taxi trips, one row per trip.
     tests:
       # Chapter 5 teaches this test at the default `error` severity to demonstrate
       # how `dbt build` skips downstream models on a test failure. The January 2024
@@ -29,12 +29,12 @@ models:
               config:
                 severity: warn
       - name: payment_type
-        description: TLC payment code (1-6).
+        description: TLC payment code. Yellow 2023-2025 adds code 0 (Flex Fare / unknown) on top of the classic 1-6.
         tests:
           - not_null:
               severity: warn
           - accepted_values:
-              values: [1, 2, 3, 4, 5, 6]
+              values: [0, 1, 2, 3, 4, 5, 6]
 
 unit_tests:
   - name: payment_type_label_maps_known_codes

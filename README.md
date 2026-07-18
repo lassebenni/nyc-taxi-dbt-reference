@@ -1,16 +1,29 @@
-# nyc_taxi — Full finished project
+# nyc_taxi — Databricks port (Week 13)
 
-> **You are on `solution`.** This is the complete Week 10 project with every chapter implemented: staging models, the `fct_trips` mart, tests, docs, macros, and the practice work.
+> **You are on `ch13-databricks`.** This is the finished Week 10 project ported to Databricks against `hyf.nyc_yellow` (128M yellow-taxi rows, 2023-2025): Databricks profile, Unity Catalog sources, surrogate `trip_id`, and an incremental `fct_trips` with merge strategy.
 
-## What this is for
+## Quick start
 
-Use this branch to see the finished shape of the project, or to compare your own work against a known-good build. It is identical to the [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) tag.
+1. Copy `profiles.yml.example` to `profiles.yml` (or point `DBT_PROFILES_DIR` at this folder).
+2. Export the four env vars from [dbt on Databricks](https://github.com/lassebenni/datatrack/blob/main/Data%20Track/Week%2013/week_13__4_dbt_on_databricks.md): `DBRICKS_HOST`, `DBRICKS_HTTP_PATH`, `DBRICKS_TOKEN`, `DBT_SCHEMA`.
+3. `uv sync && uv run dbt deps && uv run dbt debug`
+4. `uv run dbt build --select fct_trips` — run twice and compare wall-clock time.
 
-To build it: set up `profiles.yml` (see the landing README on the `main` branch), then `dbt deps && dbt build --profiles-dir .`.
+Tag [`v6-ch13-databricks`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/v6-ch13-databricks) is an immutable snapshot of this branch for diffing against your own Week 10 port.
 
-## The chapter chain
+## Week 13 practice exercise branches
 
-Each branch begins from the previous chapter's finished solution, so switching forward always lands you on a clean, working starting point.
+Clone once, then `git switch` to the branch for each practice exercise. Each branch has an `EXERCISE.md` at the repo root; compare against the matching `-solution` branch when you are stuck.
+
+| Practice exercise | Work on this branch | Compare against |
+| --- | --- | --- |
+| Ex 1 — PySpark exploration | [`exercise-pyspark-exploration`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-pyspark-exploration) | [`exercise-pyspark-exploration-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-pyspark-exploration-solution) |
+| Ex 2 — Incremental timing write-up | [`exercise-incremental-timing`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-incremental-timing) | [`exercise-incremental-timing-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-incremental-timing-solution) |
+| Ex 3 — Lakehouse synthesis write-up | [`exercise-lakehouse-writeup`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-lakehouse-writeup) | [`exercise-lakehouse-writeup-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-lakehouse-writeup-solution) |
+
+## Week 10 chapter chain (Postgres)
+
+The branches below are the Week 10 teaching chain on Azure Postgres. Week 13 builds on the finished `solution` shape, then ports it here.
 
 | Chapter | Work on this branch | Compare against this tag (finished chapter) |
 | --- | --- | --- |
@@ -20,7 +33,7 @@ Each branch begins from the previous chapter's finished solution, so switching f
 | Ch5 — dbt Tests | [`ch5-dbt-testing`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch5-dbt-testing) | [`ch5-dbt-tests-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch5-dbt-tests-solution) |
 | Ch6 — Docs and Extras | [`ch6-docs-and-extras`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch6-docs-and-extras) | [`ch6-docs-extras-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch6-docs-extras-solution) |
 | Ch7 — Practice | [`ch7-practice`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
-| Full finished project | [`solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/solution) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
+| Full finished project (Postgres) | [`solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/solution) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
 
-- **Fell behind or broke something?** Switch to the *next* chapter's branch to get a clean start with the previous chapter already done.
-- **Compare your work:** the `*-solution` tags are immutable snapshots. `git checkout <tag>` is read-only (detached HEAD); create a branch (`git switch -c mywork <tag>`) to build on one.
+- **Fell behind on the port?** Diff against tag `v6-ch13-databricks` or switch to `ch13-databricks`.
+- **Compare your work:** `*-solution` branches and tags are read-only checkpoints. `git switch -c mywork <branch>` to build on one.

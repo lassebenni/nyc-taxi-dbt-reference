@@ -10,6 +10,10 @@
 } %}
 
 select
+    {{ dbt_utils.generate_surrogate_key([
+        'pickup_datetime', 'dropoff_datetime', 'pickup_location_id',
+        'dropoff_location_id', 'fare_amount', 'total_amount', 'passenger_count'
+    ]) }} as trip_id,
     pickup_datetime,
     dropoff_datetime,
     pickup_location_id,
@@ -18,8 +22,14 @@ select
     tip_amount,
     trip_distance,
     payment_type,
-    {{ safe_divide('tip_amount', 'fare_amount') }} as tip_pct,
-    {{ safe_divide('fare_amount', 'trip_distance') }} as fare_per_mile,
+    case
+        when fare_amount > 0 then round((tip_amount / fare_amount)::numeric, 4)
+        else null
+    end as tip_pct,
+    case
+        when trip_distance > 0 then round((fare_amount / trip_distance)::numeric, 4)
+        else null
+    end as fare_per_mile,
     case payment_type
         {% for code, label in payment_types.items() %}
         when {{ code }} then '{{ label }}'

@@ -1,9 +1,9 @@
 [project]
 name = "nyc-taxi-dbt-reference"
 version = "0.1.0"
-description = "NYC Taxi dbt reference project for the HYF Data Track (Week 10)"
+description = "NYC Taxi dbt reference project for the HYF Data Track (Week 10 + Week 13 Databricks)"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 dependencies = [
-    "dbt-postgres>=1.10.2",
+    "dbt-databricks>=1.10.0",
 ]

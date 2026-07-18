@@ -1,6 +1,13 @@
-{{ config(materialized='table') }}
+{{
+  config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='trip_id'
+  )
+}}
 
 select
+    t.trip_id,
     t.pickup_datetime,
     t.dropoff_datetime,
     t.fare_amount,
@@ -19,3 +26,8 @@ left join {{ ref('stg_zones') }} pz
     on t.pickup_location_id = pz.location_id
 left join {{ ref('stg_zones') }} dz
     on t.dropoff_location_id = dz.location_id
+
+{% if is_incremental() %}
+    -- On incremental runs, only process trips newer than what we already have.
+    where t.pickup_datetime > (select max(pickup_datetime) from {{ this }})
+{% endif %}

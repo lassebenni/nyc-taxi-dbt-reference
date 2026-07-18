@@ -3,17 +3,20 @@ version: 2
 models:
   - name: fct_trips
     description: |
-      One row per completed NYC green taxi trip in January 2024, with
+      One row per completed NYC yellow taxi trip (2023-2025), with
       pickup/dropoff zone attributes folded in (OBT-style mart). Queried
       directly by dashboards and ad-hoc analysis.
 
-      **Grain:** one row per trip.
-      **Source:** `public.raw_trips` joined to `public.raw_zones` on
+      **Grain:** one row per trip (`trip_id` surrogate key).
+      **Source:** `hyf.nyc_yellow.raw_trips` joined to `raw_zones` on
       `pickup_location_id` and `dropoff_location_id`.
       **Not included:** trips where `pickup_location_id` is NULL (dropped
       in `stg_trips`); duplicate rows from the TLC source are kept as-is
       and surfaced by `dbt_utils.unique_combination_of_columns`.
     columns:
+      - name: trip_id
+        description: Surrogate key generated in `stg_trips` for incremental merge.
+        tests: [not_null, unique]
       - name: pickup_datetime
         description: Wall-clock time the trip began (America/New_York, no timezone attached).
         tests: [not_null]
