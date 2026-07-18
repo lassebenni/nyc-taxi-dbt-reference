@@ -9,7 +9,7 @@
 3. `uv sync && uv run dbt deps && uv run dbt debug`
 4. `uv run dbt build --select fct_trips` — run twice and compare wall-clock time.
 
-Tag [`week-13-databricks`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-databricks) is an immutable snapshot of this branch for diffing against your own Week 10 port.
+Tag [`week-13-databricks`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-databricks) points at this branch for immutable diffs against your own Week 10 port.
 
 ## Week 13 practice exercise branches
 
