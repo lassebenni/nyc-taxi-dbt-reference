@@ -30,4 +30,4 @@ You can use **this reference project** (already ported) or your own Week 10 port
 
 ## Compare
 
-See `ch13-incremental-timing-solution` for a sample `WRITEUP.md`. Your timings will differ by warehouse size and cluster load — the explanation matters more than the exact seconds.
+See `week-13-incremental-timing-solution` for a sample `WRITEUP.md`. Your timings will differ by warehouse size and cluster load — the explanation matters more than the exact seconds.
