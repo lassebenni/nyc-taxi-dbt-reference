@@ -1,6 +1,6 @@
 # nyc_taxi — Databricks port (Week 13)
 
-> **You are on `ch13-databricks`.** This is the finished Week 10 project ported to Databricks against `hyf.nyc_yellow` (128M yellow-taxi rows, 2023-2025): Databricks profile, Unity Catalog sources, surrogate `trip_id`, and an incremental `fct_trips` with merge strategy.
+> **You are on `week-13-databricks`.** This is the finished Week 10 project ported to Databricks against `hyf.nyc_yellow` (128M yellow-taxi rows, 2023-2025): Databricks profile, Unity Catalog sources, surrogate `trip_id`, and an incremental `fct_trips` with merge strategy.
 
 ## Quick start
 
@@ -9,7 +9,7 @@
 3. `uv sync && uv run dbt deps && uv run dbt debug`
 4. `uv run dbt build --select fct_trips` — run twice and compare wall-clock time.
 
-Tag [`v6-ch13-databricks`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/v6-ch13-databricks) is an immutable snapshot of this branch for diffing against your own Week 10 port.
+Tag [`week-13-databricks`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-databricks) is an immutable snapshot of this branch for diffing against your own Week 10 port.
 
 ## Week 13 practice exercise branches
 
@@ -17,9 +17,9 @@ Clone once, then `git switch` to the branch for each practice exercise. Each bra
 
 | Practice exercise | Work on this branch | Compare against |
 | --- | --- | --- |
-| Ex 1: PySpark exploration | [ch13-pyspark-exploration](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-pyspark-exploration) | [ch13-pyspark-exploration-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-pyspark-exploration-solution) |
-| Ex 2: Incremental timing write-up | [ch13-incremental-timing](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-incremental-timing) | [ch13-incremental-timing-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-incremental-timing-solution) |
-| Ex 3: Lakehouse synthesis write-up | [ch13-lakehouse-writeup](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-lakehouse-writeup) | [ch13-lakehouse-writeup-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-lakehouse-writeup-solution) |
+| Ex 1: PySpark exploration | [week-13-pyspark-exploration](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-pyspark-exploration) | [week-13-pyspark-exploration-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-pyspark-exploration-solution) |
+| Ex 2: Incremental timing write-up | [week-13-incremental-timing](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-incremental-timing) | [week-13-incremental-timing-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-incremental-timing-solution) |
+| Ex 3: Lakehouse synthesis write-up | [week-13-lakehouse-writeup](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-lakehouse-writeup) | [week-13-lakehouse-writeup-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-lakehouse-writeup-solution) |
 
 ## Week 10 chapter chain (Postgres)
 
@@ -35,5 +35,5 @@ The branches below are the Week 10 teaching chain on Azure Postgres. Week 13 bui
 | Ch7 — Practice | [`ch7-practice`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
 | Full finished project (Postgres) | [`solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/solution) | [`ch7-practice-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch7-practice-solution) |
 
-- **Fell behind on the port?** Diff against tag `v6-ch13-databricks` or switch to `ch13-databricks`.
+- **Fell behind on the port?** Diff against tag `week-13-databricks` or switch to branch `week-13-databricks`.
 - **Compare your work:** `*-solution` branches and tags are read-only checkpoints. `git switch -c mywork <branch>` to build on one.
