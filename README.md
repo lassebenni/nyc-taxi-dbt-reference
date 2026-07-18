@@ -17,9 +17,9 @@ Clone once, then `git switch` to the branch for each practice exercise. Each bra
 
 | Practice exercise | Work on this branch | Compare against |
 | --- | --- | --- |
-| Ex 1 — PySpark exploration | [`exercise-pyspark-exploration`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-pyspark-exploration) | [`exercise-pyspark-exploration-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-pyspark-exploration-solution) |
-| Ex 2 — Incremental timing write-up | [`exercise-incremental-timing`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-incremental-timing) | [`exercise-incremental-timing-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-incremental-timing-solution) |
-| Ex 3 — Lakehouse synthesis write-up | [`exercise-lakehouse-writeup`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-lakehouse-writeup) | [`exercise-lakehouse-writeup-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/exercise-lakehouse-writeup-solution) |
+| Ex 1: PySpark exploration | [ch13-pyspark-exploration](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-pyspark-exploration) | [ch13-pyspark-exploration-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-pyspark-exploration-solution) |
+| Ex 2: Incremental timing write-up | [ch13-incremental-timing](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-incremental-timing) | [ch13-incremental-timing-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-incremental-timing-solution) |
+| Ex 3: Lakehouse synthesis write-up | [ch13-lakehouse-writeup](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-lakehouse-writeup) | [ch13-lakehouse-writeup-solution](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/ch13-lakehouse-writeup-solution) |
 
 ## Week 10 chapter chain (Postgres)
 
