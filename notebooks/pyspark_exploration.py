@@ -1,17 +1,15 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Week 13 Practice — PySpark exploration
+# MAGIC # Week 13 Practice — PySpark exploration (solution)
 # MAGIC
-# MAGIC Read `hyf.nyc_yellow.raw_trips`, join `raw_zones`, and answer the two questions below.
-# MAGIC Use `show()` for each answer — do **not** `collect()` the raw table.
+# MAGIC Reference answers for the two practice questions.
 
 # COMMAND ----------
 
 from pyspark.sql import functions as F
 
-# TODO: read the shared Delta tables into DataFrames
-trips = None  # spark.read.table("hyf.nyc_yellow.raw_trips")
-zones = None  # spark.read.table("hyf.nyc_yellow.raw_zones")
+trips = spark.read.table("hyf.nyc_yellow.raw_trips")
+zones = spark.read.table("hyf.nyc_yellow.raw_zones")
 
 # COMMAND ----------
 
@@ -20,11 +18,15 @@ zones = None  # spark.read.table("hyf.nyc_yellow.raw_zones")
 
 # COMMAND ----------
 
-# TODO: join zones on pickup_location_id = location_id,
-# group by borough, count trips, order descending, show top row
-borough_counts = None
+borough_counts = (
+    trips
+    .join(zones, trips.pickup_location_id == zones.location_id)
+    .groupBy("borough")
+    .agg(F.count("*").alias("trip_count"))
+    .orderBy(F.col("trip_count").desc())
+)
 
-# borough_counts.show(1)
+borough_counts.show(1)
 
 # COMMAND ----------
 
@@ -33,7 +35,11 @@ borough_counts = None
 
 # COMMAND ----------
 
-# TODO: group by payment_type, avg(total_amount), show result
-payment_avg = None
+payment_avg = (
+    trips
+    .groupBy("payment_type")
+    .agg(F.round(F.avg("total_amount"), 2).alias("avg_total_amount"))
+    .orderBy("payment_type")
+)
 
-# payment_avg.show()
+payment_avg.show()
