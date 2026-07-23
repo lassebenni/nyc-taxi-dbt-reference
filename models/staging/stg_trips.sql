@@ -23,11 +23,11 @@ select
     trip_distance,
     payment_type,
     case
-        when fare_amount > 0 then round((tip_amount / fare_amount)::numeric, 4)
+        when fare_amount > 0 then round(tip_amount / fare_amount, 4)
         else null
     end as tip_pct,
     case
-        when trip_distance > 0 then round((fare_amount / trip_distance)::numeric, 4)
+        when trip_distance > 0 then round(fare_amount / trip_distance, 4)
         else null
     end as fare_per_mile,
     case payment_type
@@ -36,7 +36,7 @@ select
         {% endfor %}
         else 'Other'
     end as payment_type_label,
-    extract(epoch from (dropoff_datetime - pickup_datetime)) / 60 as trip_duration_minutes
+    round((unix_timestamp(dropoff_datetime) - unix_timestamp(pickup_datetime)) / 60.0, 2) as trip_duration_minutes
 from {{ source('nyc_taxi', 'raw_trips') }}
 where pickup_location_id is not null
     and fare_amount >= 0
