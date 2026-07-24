@@ -1,6 +1,8 @@
 # nyc_taxi — Databricks port (Week 13)
 
-> **You are on `week-13-databricks`.** This is the finished Week 10 project ported to Databricks against `hyf.nyc_yellow` (128M yellow-taxi rows, 2023-2025): Databricks profile, Unity Catalog sources, surrogate `trip_id`, and an incremental `fct_trips` with merge strategy.
+> **You are on `week-13-databricks`.** This is the **starter branch** for Week 13 Chapter 4 ([dbt on Databricks](https://github.com/lassebenni/datatrack/blob/main/Data%20Track/Week%2013/week_13__4_dbt_on_databricks.md)). It contains the finished Week 10 project with `profiles.yml` pre-configured for Databricks. As you follow Chapter 4, you will update `models/staging/_sources.yml` to point at Unity Catalog (`hyf.nyc_yellow`) and configure `fct_trips.sql` as an incremental model.
+>
+> To see the completed solution, check out [`week-13-databricks-solution`](https://github.com/lassebenni/nyc-taxi-dbt-reference/tree/week-13-databricks-solution).
 
 ## Quick start
 
