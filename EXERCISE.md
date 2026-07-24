@@ -6,7 +6,7 @@
 
 Run `fct_trips` twice on Databricks, record wall-clock time for each build, and explain why the second run is faster using `is_incremental()` and `{{ this }}` in your own words.
 
-You can use **this reference project** (already ported) or your own Week 10 port. If your port is broken, `git switch week-13-databricks` in this repo gives you a known-good starting point.
+You can use **this reference project** (already ported) or your own Week 10 port. If your port is broken, `git switch week-13-ch-4-dbt-solution` in this repo gives you a known-good starting point.
 
 ## Setup
 
@@ -30,4 +30,4 @@ You can use **this reference project** (already ported) or your own Week 10 port
 
 ## Compare
 
-See `week-13-incremental-timing-solution` for a sample `WRITEUP.md`. Your timings will differ by warehouse size and cluster load — the explanation matters more than the exact seconds.
+See `week-13-practice-exercise-incremental-timing-solution` for a sample `WRITEUP.md`. Your timings will differ by warehouse size and cluster load — the explanation matters more than the exact seconds.
