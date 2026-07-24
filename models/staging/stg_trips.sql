@@ -11,8 +11,8 @@
 
 select
     {{ dbt_utils.generate_surrogate_key([
-        'pickup_datetime', 'dropoff_datetime', 'pickup_location_id',
-        'dropoff_location_id', 'fare_amount', 'total_amount', 'passenger_count'
+        'vendor_id', 'pickup_datetime', 'dropoff_datetime', 'pickup_location_id',
+        'dropoff_location_id', 'fare_amount', 'trip_distance', 'total_amount', 'passenger_count'
     ]) }} as trip_id,
     pickup_datetime,
     dropoff_datetime,
@@ -40,3 +40,10 @@ select
 from {{ source('nyc_taxi', 'raw_trips') }}
 where pickup_location_id is not null
     and fare_amount >= 0
+qualify row_number() over (
+    partition by {{ dbt_utils.generate_surrogate_key([
+        'vendor_id', 'pickup_datetime', 'dropoff_datetime', 'pickup_location_id',
+        'dropoff_location_id', 'fare_amount', 'trip_distance', 'total_amount', 'passenger_count'
+    ]) }}
+    order by pickup_datetime
+) = 1
