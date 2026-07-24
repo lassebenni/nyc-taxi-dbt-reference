@@ -26,4 +26,4 @@ Aim for 250-400 words total. Portfolio-ready tone: clear, specific, no buzzword 
 
 ## Compare
 
-See `week-13-lakehouse-writeup-solution` for a sample tone and structure. Do not copy it verbatim — interviewers and teachers can tell.
+See `week-13-practice-exercise-lakehouse-writeup-solution` for a sample tone and structure. Do not copy it verbatim — interviewers and teachers can tell.
