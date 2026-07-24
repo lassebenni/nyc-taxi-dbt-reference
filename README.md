@@ -4,8 +4,8 @@
 
 ## Quick start
 
-1. Copy `profiles.yml.example` to `profiles.yml` (or point `DBT_PROFILES_DIR` at this folder).
-2. Export the four env vars from [dbt on Databricks](https://github.com/lassebenni/datatrack/blob/main/Data%20Track/Week%2013/week_13__4_dbt_on_databricks.md): `DBRICKS_HOST`, `DBRICKS_HTTP_PATH`, `DBRICKS_TOKEN`, `DBT_SCHEMA`.
+1. `profiles.yml` is committed and reads environment variables.
+2. Export the four env vars from [dbt on Databricks](https://github.com/lassebenni/datatrack/blob/main/Data%20Track/Week%2013/week_13__4_dbt_on_databricks.md): `DATABRICKS_HOST`, `DATABRICKS_HTTP_PATH`, `DATABRICKS_TOKEN`, `DBT_SCHEMA`.
 3. `uv sync && uv run dbt deps && uv run dbt debug`
 4. `uv run dbt build --select fct_trips` — run twice and compare wall-clock time.
 
