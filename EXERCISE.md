@@ -10,7 +10,7 @@ You can use **this reference project** (already ported) or your own Week 10 port
 
 ## Setup
 
-1. Copy `profiles.yml.example` to `profiles.yml` and export `DBRICKS_HOST`, `DBRICKS_HTTP_PATH`, `DBRICKS_TOKEN`, `DBT_SCHEMA`.
+1. Export `DATABRICKS_HOST`, `DATABRICKS_HTTP_PATH`, `DATABRICKS_TOKEN`, and `DBT_SCHEMA` (see [dbt on Databricks](https://github.com/lassebenni/datatrack/blob/main/Data%20Track/Week%2013/week_13__4_dbt_on_databricks.md)). `profiles.yml` is already committed and reads those env vars.
 2. `uv sync && uv run dbt deps && uv run dbt debug`
 3. Optional: drop your existing `fct_trips` table in your schema so the first run is a true full build (`drop table if exists hyf.<your_schema>.fct_trips` in the SQL warehouse).
 
