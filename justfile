@@ -4,7 +4,7 @@ DBT := "dbt"
 default:
     @just --list
 
-# Verify dbt can connect to Azure PostgreSQL
+# Verify dbt can connect to Databricks
 debug:
     {{DBT}} debug --profiles-dir .
 
