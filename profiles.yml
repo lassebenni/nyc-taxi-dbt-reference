@@ -1,0 +1,13 @@
+nyc_taxi:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: hyf-data-pg.postgres.database.azure.com
+      port: 5432
+      user: <your_username>       # ⚠️ Your personal Week 9 login, not a shared admin
+      password: "{{ env_var('PG_PASSWORD') }}"
+      dbname: team1
+      schema: dev_<your_name>     # ⚠️ Replace with your own first name, lowercase
+      sslmode: require
+      threads: 4
